@@ -41,8 +41,8 @@ else{
 
     days=Math.floor(availableSum/amountPerDay);
     remainAmount=availableSum-(amountPerDay*days);
-
-    switch(days){
+//console.log(days.slice(1))
+    switch(parseInt(days.toString().slice(-1))){
         case parseInt((days.toString()).match(/[1]$/)):
             var daysWriting = ' день';
             break;
@@ -54,7 +54,7 @@ else{
     }
     alert('Семья сможет прожить на указанную сумму ' + days + daysWriting);
     
-    switch(remainAmount){
+    switch(parseInt(remainAmount.toString().slice(-1))){
         case parseInt((remainAmount.toString()).match(/[1]$/)):
             var amountWriting = ' рубль';
             break;
