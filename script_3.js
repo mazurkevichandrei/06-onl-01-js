@@ -26,8 +26,8 @@ let amountPerDay=0;
 let days=0;
 let remainAmount=0;
 //Для проверки поля на присутствие символов отличных от числа:
-let checkMask=/\D/g;
-let check=availableSum.match(checkMask);
+//let checkMask=/\D/g;
+let check=availableSum.match(/\D/g);
 //
 
 if(availableSum=='' || check!=null){
