@@ -43,34 +43,34 @@ else{
     remainAmount=availableSum-(amountPerDay*days);
 //console.log(days.slice(1))
 
-if (parseInt(days.toString().slice(-2)) > 9 && parseInt(days.toString().slice(-2)) < 21){
-    var daysWriting = ' дней'
-}else{
-    switch(parseInt(days.toString().slice(-1))){
-        case parseInt((days.toString()).match(/[1]$/)):
-            var daysWriting = ' день';
-            break;
-        case parseInt((days.toString()).match(/[2,3,4]$/)):
-            var daysWriting = ' дня';
-            break;
-        default:
-            var daysWriting = ' дней'
+    if (parseInt(days.toString().slice(-2)) > 9 && parseInt(days.toString().slice(-2)) < 21){
+        var daysWriting = ' дней'
+    }else{
+        switch(parseInt(days.toString().slice(-1))){
+            case parseInt((days.toString()).match(/[1]$/)):
+                var daysWriting = ' день';
+                break;
+            case parseInt((days.toString()).match(/[2,3,4]$/)):
+                var daysWriting = ' дня';
+                break;
+            default:
+                var daysWriting = ' дней'
+        }
     }
-}
     alert('Семья сможет прожить на указанную сумму ' + days + daysWriting);
     if (parseInt(remainAmount.toString().slice(-2)) > 9 && parseInt(remainAmount.toString().slice(-2)) < 21){
         var amountWriting = ' рублей'
     }else{    
-    switch(parseInt(remainAmount.toString().slice(-1))){
-        case parseInt((remainAmount.toString()).match(/[1]$/)):
-            var amountWriting = ' рубль';
-            break;
-        case parseInt((remainAmount.toString()).match(/[2,3,4]$/)):
-            var amountWriting = ' рубля';
-            break;
-        default:
-            var amountWriting = ' рублей'
+        switch(parseInt(remainAmount.toString().slice(-1))){
+            case parseInt((remainAmount.toString()).match(/[1]$/)):
+                var amountWriting = ' рубль';
+                break;
+            case parseInt((remainAmount.toString()).match(/[2,3,4]$/)):
+                var amountWriting = ' рубля';
+                break;
+            default:
+                var amountWriting = ' рублей'
+        }
     }
-}
     alert('Остаток: ' + remainAmount + amountWriting);
 }
