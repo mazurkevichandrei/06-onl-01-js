@@ -41,5 +41,5 @@ else{
     days=Math.floor(availableSum/amountPerDay);
     alert('Семья сможет прожить на указанную сумму ' + days + ' дней!');
     remainAmount=availableSum-(amountPerDay*days);
-    alert('Остаток ' + remainAmount +' рублей!');
+    alert('Остаток: ' + remainAmount +' рублей!');
 }
