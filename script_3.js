@@ -42,6 +42,10 @@ else{
     days=Math.floor(availableSum/amountPerDay);
     remainAmount=availableSum-(amountPerDay*days);
 //console.log(days.slice(1))
+
+if (parseInt(days.toString().slice(-2)) > 9 && parseInt(days.toString().slice(-2)) < 21){
+    var daysWriting = ' дней'
+}else{
     switch(parseInt(days.toString().slice(-1))){
         case parseInt((days.toString()).match(/[1]$/)):
             var daysWriting = ' день';
@@ -52,8 +56,11 @@ else{
         default:
             var daysWriting = ' дней'
     }
+}
     alert('Семья сможет прожить на указанную сумму ' + days + daysWriting);
-    
+    if (parseInt(remainAmount.toString().slice(-2)) > 9 && parseInt(remainAmount.toString().slice(-2)) < 21){
+        var amountWriting = ' рублей'
+    }else{    
     switch(parseInt(remainAmount.toString().slice(-1))){
         case parseInt((remainAmount.toString()).match(/[1]$/)):
             var amountWriting = ' рубль';
@@ -64,5 +71,6 @@ else{
         default:
             var amountWriting = ' рублей'
     }
+}
     alert('Остаток: ' + remainAmount + amountWriting);
 }
