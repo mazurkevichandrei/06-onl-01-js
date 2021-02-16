@@ -29,15 +29,15 @@ let remainAmount=0;
 let checkMask=/\D/g;
 let check=availableSum.match(checkMask);
 //
-for (var productItem of data){
-    let amountItem=productItem.price*productItem.count
-    amountPerDay=amountPerDay+amountItem
-}
 
 if(availableSum=='' || check!=null){
     alert('Вы не ввели сумму или указали неверный формат!')
 }
 else{
+    for (var productItem of data){
+        let amountItem=productItem.price*productItem.count
+        amountPerDay=amountPerDay+amountItem
+    }
     days=Math.floor(availableSum/amountPerDay);
     alert('Семья сможет прожить на указанную сумму ' + days + ' дней!');
     remainAmount=availableSum-(amountPerDay*days);
