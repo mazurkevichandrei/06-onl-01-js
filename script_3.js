@@ -38,8 +38,31 @@ else{
         let amountItem=productItem.price*productItem.count
         amountPerDay=amountPerDay+amountItem
     }
+
     days=Math.floor(availableSum/amountPerDay);
-    alert('Семья сможет прожить на указанную сумму ' + days + ' дней!');
     remainAmount=availableSum-(amountPerDay*days);
-    alert('Остаток: ' + remainAmount +' рублей!');
+
+    switch(days){
+        case parseInt((days.toString()).match(/[1]$/)):
+            var daysWriting = ' день';
+            break;
+        case parseInt((days.toString()).match(/[2,3,4]$/)):
+            var daysWriting = ' дня';
+            break;
+        default:
+            var daysWriting = ' дней'
+    }
+    alert('Семья сможет прожить на указанную сумму ' + days + daysWriting);
+    
+    switch(remainAmount){
+        case parseInt((remainAmount.toString()).match(/[1]$/)):
+            var amountWriting = ' рубль';
+            break;
+        case parseInt((remainAmount.toString()).match(/[2,3,4]$/)):
+            var amountWriting = ' рубля';
+            break;
+        default:
+            var amountWriting = ' рублей'
+    }
+    alert('Остаток: ' + remainAmount + amountWriting);
 }
