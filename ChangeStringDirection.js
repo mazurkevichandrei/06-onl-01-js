@@ -1,10 +1,13 @@
 let str = 'Hello'
-strToArr=str.split('')
-console.log(strToArr)
-resultArr=[]
+console.log(str)
 
-strToArr.forEach(function(item,i,arr){
-  resultArr.push(arr[arr.length-i-1])
-})
-console.log(resultArr)
-console.log(resultArr.join(''))
+function changeDirection(initStr){
+  strToArr=initStr.split('')
+  let resultArr=[]
+  strToArr.forEach(function(item,i,arr){
+    resultArr.push(arr[arr.length-i-1])
+  })
+  return(resultArr.join(''))
+}
+
+console.log(changeDirection(str))
