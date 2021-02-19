@@ -7,3 +7,4 @@ strToArr.forEach(function(item,i,arr){
   resultArr.push(arr[arr.length-i-1])
 })
 console.log(resultArr)
+console.log(resultArr.join(''))
