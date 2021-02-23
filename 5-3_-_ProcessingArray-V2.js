@@ -1,5 +1,5 @@
 function ProcessingArr(){
-  console.log('Elements in initial array: ' + (this.data).length)
+  console.log('Elements in initial array: ' + this.data.length)
   this.symCount = function(){
     var countSymbols = []
     for(let item of this.data){
@@ -12,7 +12,7 @@ function ProcessingArr(){
 }
 
 var arr={
-  data: ['Hello','I`m','User','!']
+  data: ['Hello','I`m','User']
   }
 var arr2={
   data: ['This','is','new','array']
