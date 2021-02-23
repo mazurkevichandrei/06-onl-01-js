@@ -1,13 +1,14 @@
 function ProcessingArr(data){
-  this.len = () => console.log('Elements in initial array: ' + data.length);
+  this.data=data
+  this.len = () => console.log('Elements in initial array: ' + this.data.length);
   this.symCount = function(){
     var countSymbols = []
-    for(let item of data){
+    for(let item of this.data){
       countSymbols.push(item.length)
     }
     console.log(countSymbols)
   };
-  this.arrToString = () => console.log(data.join(', '));
+  this.arrToString = () => console.log(this.data.join(', '));
 }
 
 var arr = new ProcessingArr (['Hello','I`m','User','!'])
