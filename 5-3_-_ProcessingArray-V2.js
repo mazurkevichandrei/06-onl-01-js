@@ -14,4 +14,9 @@ function ProcessingArr(){
 var arr={
   data: ['Hello','I`m','User','!']
   }
+var arr2={
+  data: ['This','is','new','array']
+}
+
 ProcessingArr.call(arr)
+ProcessingArr.call(arr2)
