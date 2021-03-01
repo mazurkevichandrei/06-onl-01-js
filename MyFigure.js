@@ -20,6 +20,7 @@ class Figure{
     return coorForShow
   }
   calcSquare(){
+    //gauss formula
     const arrLen=this.coordinates.length
     const f=this.coordinates[arrLen-2]*this.coordinates[1]
     const s=this.coordinates[0]*this.coordinates[arrLen-1]
