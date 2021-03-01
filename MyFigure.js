@@ -27,6 +27,10 @@ class Circle extends Figure{
     extendCoor.push(`${figureParametre}: ${this.radius}`)
     return extendCoor
   }
+  calcSquare (){
+    const PI = 3.14;
+    console.log('Square of Circle: '+PI*this.radius**2)
+  }
 }
 //-------------RECTANGLE CLASS
 class Rectangle extends Figure{
@@ -40,20 +44,29 @@ class Rectangle extends Figure{
     extendCoor.push(`Width: ${this.width}, Height: ${this.height}`)
     return extendCoor
   }
+  calcSquare(){
+    console.log('Square of Rectangle: '+this.height*this.width)
+  }
 }
 //-------------SQUARE CLASS
-class Square extends Circle{
+class Quadrate extends Circle{
     showCoordinates(){
       const extendCoor = super.showCoordinates('W/H')
       return extendCoor
     }
+    calcSquare(){
+      console.log('Square of Quadrate: '+this.radius**2)
+    }
 }
 
-const fig = new Figure([2,1,5,9,10,15])
+const fig = new Figure([2,2,5,5,4,4,8,8])
 const cir = new Circle([5,5],20)
 const rec = new Rectangle([7,7],10,20)
-const squ = new Square([8,8],15)
+const squ = new Quadrate([8,8],15)
 console.log('Figure: '+fig.showCoordinates())
 console.log('Circle: '+cir.showCoordinates())
+cir.calcSquare()
 console.log('Rectangle: '+rec.showCoordinates())
-console.log('Square: '+squ.showCoordinates())
+rec.calcSquare()
+console.log('Quadrate: '+squ.showCoordinates())
+squ.calcSquare()
