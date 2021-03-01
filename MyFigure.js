@@ -80,6 +80,9 @@ class Quadrate extends Circle{
     }
 }
 
+
+const f1 = new Figure([15,7,8,125,6,16])
+f1.calcSquare()
 const fig = new Figure([1,7,6,6,7,7,8,15,9,0,15,325])
 const cir = new Circle([5,5],10)
 const rec = new Rectangle([7,7],40,20)
