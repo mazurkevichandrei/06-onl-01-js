@@ -5,12 +5,16 @@ class Figure{
   }
   showCoordinates(){
     let coorForShow=[]
+    let xIndex=1
+    let yIndex=1
     for(let i=0;i<this.coordinates.length;i++){
       if(i%2===0){
-        coorForShow.push(`X:${this.coordinates[i]} `)
+        coorForShow.push(`X${xIndex}=${this.coordinates[i]} `)
+        xIndex++
       }
       else{
-         coorForShow.push(`Y:${this.coordinates[i]} `)
+         coorForShow.push(`Y${yIndex}=${this.coordinates[i]} `)
+         yIndex++
       }
     }
     return coorForShow
