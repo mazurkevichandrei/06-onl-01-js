@@ -21,8 +21,8 @@ class Figure{
   }
   calcSquare(){
     const arrLen=this.coordinates.length
-    let f=this.coordinates[arrLen-2]*this.coordinates[1]
-    let s=this.coordinates[0]*this.coordinates[arrLen-1]
+    const f=this.coordinates[arrLen-2]*this.coordinates[1]
+    const s=this.coordinates[0]*this.coordinates[arrLen-1]
     let fpart=0
     let spart=0
     for(let i=0;i<arrLen-2;i+=2){
