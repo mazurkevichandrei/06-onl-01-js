@@ -23,17 +23,17 @@ class Figure{
     const arrLen=this.coordinates.length
     const f=this.coordinates[arrLen-2]*this.coordinates[1]
     const s=this.coordinates[0]*this.coordinates[arrLen-1]
-    let fpart=0
-    let spart=0
+    let fPart=0
+    let sPart=0
     for(let i=0;i<arrLen-2;i+=2){
-      fpart+=this.coordinates[i]*this.coordinates[i+3]
-      spart+=this.coordinates[i+2]*this.coordinates[i+1]
+      fPart+=this.coordinates[i]*this.coordinates[i+3]
+      sPart+=this.coordinates[i+2]*this.coordinates[i+1]
     }
     // console.log(fpart)
     // console.log(spart)
     // console.log(f)
     // console.log(s)
-    let figureSquare=0.5*((f+fpart)-(s+spart))
+    let figureSquare=0.5*((f+fPart)-(s+sPart))
     console.log('Square of Figure: '+Math.abs(figureSquare))
   }
 }
