@@ -9,11 +9,13 @@ const btnClose = document.querySelectorAll('.close');
 
 //Action Show_element
 function showElement (elm){
-    elm.style.display='block'    
+    elm.style.display='block'
+    setTimeout(()=>elm.style.opacity='1',1)    
 }
 //Action Hide_element
 function hideElement(elm){
-    elm.style.display='none'
+    elm.style.opacity='0'
+    setTimeout(()=>elm.style.display='none',500)
 }
 
 //Scenario for ADD_USER Button
