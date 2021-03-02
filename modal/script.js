@@ -3,7 +3,7 @@ const btnAddUser = document.querySelector('.add-user');
 //FORM FOR INPUT
 const form = document.querySelector('.modal');
 //FORM FIELDS
-const inpt = document.querySelectorAll('input')
+const inpt = document.querySelectorAll('.popap-form > label > input')
 //FORM CLOSE BUTTONS
 const btnClose = document.querySelectorAll('.close');
 
@@ -28,7 +28,7 @@ function btnCloseAction(){
     btnAddUser.style.backgroundColor='';
     btnAddUser.style.color='#000';
     for(let item of inpt){
-        item.value=('Empty for Test')
+        item.value=('')
     }
 }
 
