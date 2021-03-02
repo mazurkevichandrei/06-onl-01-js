@@ -19,10 +19,12 @@ function hideElement(elm){
 //Scenario for ADD_USER Button
 function btnAddUserAction(){
     showElement(form)
+    btnAddUser.style.backgroundColor='green';
 }
 //Scenario for CLOSE Buttons
 function btnCloseAction(){
     hideElement(form)
+    btnAddUser.style.backgroundColor='';
     for(let item of inpt){
         item.value=('Empty for Test')
     }
