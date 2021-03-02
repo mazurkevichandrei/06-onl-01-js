@@ -29,9 +29,11 @@ function btnCloseAction(){
     hideElement(form)
     btnAddUser.style.backgroundColor='';
     btnAddUser.style.color='#000';
-    for(let item of inpt){
+    setTimeout(function(){
+        for(let item of inpt){
         item.value=('')
-    }
+        }
+    } ,500)
 }
 
 //Listeners for Buttons
