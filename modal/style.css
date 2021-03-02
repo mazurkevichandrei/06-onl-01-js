@@ -87,3 +87,6 @@
 .btn:hover {
     border-color: #333;
 }
+.add-user{
+    transition: all linear .3s;
+}
