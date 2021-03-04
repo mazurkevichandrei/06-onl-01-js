@@ -154,7 +154,7 @@ function addCustomer(){
 }
 
 //Listeners for Buttons
-btnAddUser.addEventListener('click',btnAddUserAction)
+btnAddUser.addEventListener('click', btnAddUserAction)
 for(let item of btnClose){
     item.addEventListener('click', btnCloseAction)
 }
