@@ -41,11 +41,12 @@ function clearInput(){
 //Remove customer item
 function delCust(e){
     const elementToDel = e.target.parentElement.parentElement
-    elementToDel.style.transform ='scaleY(0.0)'
+    elementToDel.style.transform ='scaleY(1.4)'
+    setTimeout(()=> elementToDel.style.transform ='scaleY(0)',300)
     function remove(){
         elementToDel.remove()
     }
-    setTimeout(remove,300)
+    setTimeout(remove,600)
     //Remove from data
     //const elementId = elementToDel.querySelector('.item_firstname')
     //console.log(elementToDel)
@@ -119,7 +120,7 @@ function btnCloseAction(){
     btnAddUser.style.backgroundColor='';
     btnAddUser.style.color='#5c5a5a';
     setTimeout(clearInput ,500)
-    setTimeout(()=> customers.style.marginTop='20px',400);
+    setTimeout(()=> customers.style.marginTop='20px',250);
 }
 
 //Scenario for OK
