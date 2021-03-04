@@ -43,10 +43,9 @@ function delCust(e){
     const elementToDel = e.target.parentElement.parentElement
     elementToDel.style.transform ='scaleY(1.4)'
     setTimeout(()=> elementToDel.style.transform ='scaleY(0)',300)
-    function remove(){
-        elementToDel.remove()
-    }
-    setTimeout(remove,600)
+    setTimeout(()=> elementToDel.style.fontSize='0',300)
+    setTimeout(()=> e.target.remove(),300)
+    setTimeout(()=> elementToDel.remove(),600)
     //Remove from data
     //const elementId = elementToDel.querySelector('.item_firstname')
     //console.log(elementToDel)
