@@ -138,6 +138,7 @@
 .customers-item,
 .customers-item_header {
     display: flex;
+    background-color: #fff;
     transition: all linear .3s;
 }
 .customers-item_header{
