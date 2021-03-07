@@ -32,8 +32,8 @@ const customers = document.querySelector('.customers');
 const customerItem = document.querySelector('.customers-item')
 
 
-//Clear input fields
-function clearInput(){
+//Clean input fields
+function cleanInput(){
     for(let item of inpt){
         item.value=('')
         }
@@ -118,7 +118,7 @@ function btnCloseAction(){
     hideElement(form)
     btnAddUser.style.backgroundColor='';
     btnAddUser.style.color='#5c5a5a';
-    setTimeout(clearInput ,500)
+    setTimeout(cleanInput ,500)
     setTimeout(()=> customers.style.marginTop='20px',250);
 }
 
@@ -147,7 +147,7 @@ function addCustomer(){
     )
     console.log(data)
     publishCustomer(custFName,custLName,custAge)
-    clearInput();
+    cleanInput();
     }
     
 }
