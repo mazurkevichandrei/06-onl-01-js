@@ -9,7 +9,7 @@ function calc (data){
     total += item
     }
   }
-  return(console.log('Total: ' + total))
+  return('Total: ' + total)
 }
 
 calc(arr1)
