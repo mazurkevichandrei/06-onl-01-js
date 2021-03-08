@@ -67,7 +67,7 @@ function addDelBtn(element){
 }
 
 //Publish new Customer
-let idCounterAttr=1000 //idCounter for HTML Attribute
+let idCounter=1001; //idCounter for Data
 function publishCustomer(custFName,custLName,custAge){
     //Customer Template
     const customerTemplate = customerItem.cloneNode(true)
@@ -84,20 +84,18 @@ function publishCustomer(custFName,custLName,custAge){
     customerTemplateAge.textContent   = custAge;
     //Add data of new Customer to Table
     addDelBtn(customerDeleteBtn)
-    customerTemplate.setAttribute('id',idCounterAttr++)
+    customerTemplate.setAttribute('id',idCounter++)
     customers.append(customerTemplate)
 }
 
-let idCounter=1000; //idCounter for Data
 //Initial Adding from data to table
 data.forEach(function(item, i, data){
     const custFName = item.firstName;
     const custLName = item.lastName;
     const custAge   = item.age;
-    
-    item.id=idCounter++
-
+    item.id=idCounter
     publishCustomer(custFName,custLName,custAge)
+    
 })
 
 //Action Show_element
@@ -147,7 +145,7 @@ function addCustomer(){
             firstName: custFName,
             lastName: custLName,
             age: custAge,
-            id: idCounter++
+            id: idCounter
         }
     )
     console.log(data)
