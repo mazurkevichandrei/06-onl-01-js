@@ -46,10 +46,12 @@ function delCust(e){
     setTimeout(()=> elementToDel.style.fontSize='0',300)
     setTimeout(()=> e.target.remove(),300)
     setTimeout(()=> elementToDel.remove(),600)
-    //Remove from data
-    //const elementId = elementToDel.querySelector('.item_firstname')
-    //console.log(elementToDel)
-    //console.log(elementId)
+    
+    //Remove element from DATA Array
+    const elementId = elementToDel.getAttribute('id')
+    const indexToDel = data.findIndex((item)=>item.id==elementId)
+    data.splice(indexToDel,1)
+    console.log(data)
 }
 
 //Add Delete Button to element
@@ -65,6 +67,7 @@ function addDelBtn(element){
 }
 
 //Publish new Customer
+let idCounterAttr=1000 //idCounter for HTML Attribute
 function publishCustomer(custFName,custLName,custAge){
     //Customer Template
     const customerTemplate = customerItem.cloneNode(true)
@@ -81,9 +84,11 @@ function publishCustomer(custFName,custLName,custAge){
     customerTemplateAge.textContent   = custAge;
     //Add data of new Customer to Table
     addDelBtn(customerDeleteBtn)
+    customerTemplate.setAttribute('id',idCounterAttr++)
     customers.append(customerTemplate)
 }
-let idCounter=1; //idCounter not used yet
+
+let idCounter=1000; //idCounter for Data
 //Initial Adding from data to table
 data.forEach(function(item, i, data){
     const custFName = item.firstName;
