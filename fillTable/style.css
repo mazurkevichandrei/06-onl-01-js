@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins';
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    /* height: 100%; */
+    background: rgba(161, 202, 214,0.5);
+    cursor: pointer;
+    opacity: 0;
+    transition: all linear .5s;
+}
+
+.popap {
+    /* position: absolute; */
+    border: 1px solid rgba(0, 0, 0, .5);
+    width: 300px;
+    /* height: 250px; */
+    background: #fff;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: default;
+    border: 2px solid rgba(161, 202, 214, 1);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.popap-head {
+    position: relative;
+    /* height: 25px; */
+}
+
+.popap-head .close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+    top: 13px;
+    right: 20px;
+    margin: auto;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(250, 60, 82, 1);
+    transition: all linear .2s;
+}
+
+.popap-head .close:hover {
+    /* border-color: #333; */
+    transform: scale(1.2);
+
+}
+
+.popap-main {
+    padding: 20px;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.popap-form {
+    margin-bottom: 20px;
+}
+
+.popap-main label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.popap-main label span {
+    font: 12px sans-serif;
+    display: block;
+    font-weight: bold;
+    color: #7a7a79;
+}
+
+.popap-main label input {
+    width: 100%;
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+    border: 2px solid #8f8e8d;
+    border-radius: 3px;
+}
+
+.popap-btn {
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all linear .3s;
+    font-weight: bold;
+}
+.ok{
+    color: #fff;
+    background-color: #3be012;
+}
+.close{
+    color: #fff;
+    background-color: #f7965e;
+}
+.btn:hover {
+    /* border-color: #333; */
+    transform: scale(1.1);
+}
+.add-user{
+    color: #5c5a5a;
+    transition: all linear .3s;
+    font-weight: bold;
+}
+
+/* Customer Table */
+
+.customers {
+    max-width: 730px;
+    width: 100%;
+    margin-top: 20px;
+    transition: all linear 0.3s;
+}
+
+.customers-item,
+.customers-item_header {
+    display: flex;
+    background-color: #fff;
+    transition: all linear .3s;
+}
+.customers-item_header{
+    background-color: #64e368;
+    color: #fff;
+}
+.customers-item_header div{
+    padding: 10px 0;
+}
+.item_firstname,
+.item_lastname,
+.item_age {
+    max-width: 200px;
+}
+.item_delete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 130px;
+}
+.customers-item_cell{
+    border: 1px solid #6d6d6e;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.delete_customer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    background-color:  rgba(250, 60, 82, 1);
+    cursor: pointer;
+    transition: all linear .3s;
+}
+.delete_customer:hover{
+    transform: scale(1.2);
+}
+.delete_customer:focus{
+    outline-style: none;
+}
