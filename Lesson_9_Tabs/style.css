@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body{
+    font-family: 'Poppins';
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 500px;
+    width: 100%;
+    padding: 15px;
+    /* border: 2px solid grey; */
+    margin: 0 auto;
+}
+.bookmarks{
+    display: flex;
+    align-items: flex-end;
+    /* position: relative;
+    bottom: -2px; */
+}
+.bookmark_tab{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    max-width: 100px;
+    width: 100%;
+    border: 1px solid #6e7c85;
+    border-radius: 5px 5px 0 0;
+    background-color: #e8eaeb;
+    padding: 10px;
+    cursor: pointer;
+    transition: all linear .3s;
+}
+.bookmark_tab.bookmark_tab_active{
+    background-color: #6e7c85;
+    color: #ffffff;
+    /* padding-top: 25px; */
+}
+.bookmark_tab:hover{
+    background-color: #98acb8;
+    color: #ffffff;
+}
+.bookmark_tab.bookmark_tab_active:hover{
+    background-color: #6e7c85;
+    color: #ffffff;
+}
+.delete_tab_btn{
+    cursor: pointer;
+    background-color: #ffffff;
+    font-weight: bold;
+    border: 1px solid #6e7c85;
+    padding-top: 4px;
+    border-radius: 3px;
+    transition: all linear .3s;
+    outline: 0;
+}
+.delete_tab_btn.last{
+    display: none;
+}
+.delete_tab_btn:hover{
+    background-color: #f20f53;
+    color: #ffffff;
+}
+.content{
+    position: relative;
+    max-width: 400px;
+    /* border: 2px solid red; */
+    /* height: 100%; */
+    padding: 10px;
+}
+.content_item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #6e7c85;
+    padding: 15px;
+    max-width: 400px;
+    width: 100%;
+    display: none;
+    
+}
+.content_item.content_item_active{
+    display: block;
+}
