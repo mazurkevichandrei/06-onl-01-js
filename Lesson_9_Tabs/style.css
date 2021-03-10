@@ -17,8 +17,8 @@ body{
 .bookmarks{
     display: flex;
     align-items: flex-end;
-    /* position: relative;
-    bottom: -2px; */
+    position: relative;
+    bottom: -1px;
 }
 .bookmark_tab{
     display: flex;
