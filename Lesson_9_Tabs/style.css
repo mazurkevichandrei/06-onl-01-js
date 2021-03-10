@@ -21,9 +21,7 @@ body{
 }
 .bookmark_tab{
     display: flex;
-    align-items: flex-end;
     justify-content: space-between;
-    max-width: 100px;
     width: 100%;
     border: 1px solid #6e7c85;
     border-radius: 5px 5px 0 0;
