@@ -292,7 +292,6 @@ function defineSelected(){
         alert('Please, select TYPE!')
     }
     else{
-    //const selectedFilterValue = selectForm.options[selectForm.selectedIndex].value
     const selectedFilterValue = selectForm.value
     console.log(selectedFilterValue)
     //Clean table before publish filtered Data:
