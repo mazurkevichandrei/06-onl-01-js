@@ -301,6 +301,7 @@ function rstFilter(){
     const tableStringToDel = document.querySelectorAll('.table_data_string.cell')
     tableStringToDel.forEach((item)=>item.remove())
     defineDataToPublish(data)
+    selectForm.value=1
 }
 
 //Filter Button Event:
