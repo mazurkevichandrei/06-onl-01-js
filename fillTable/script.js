@@ -112,7 +112,7 @@ function hideElement(elm){
 //Scenario for ADD_USER Button
 function btnAddUserAction(){
     showElement(form)
-    btnAddUser.style.backgroundColor='#64e368';
+    btnAddUser.style.backgroundColor='#98acb8';
     btnAddUser.style.color='#fff';
     customers.style.marginTop='250px';
 }
