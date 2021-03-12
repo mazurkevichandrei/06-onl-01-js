@@ -288,6 +288,11 @@ function publishData(price,type,area,presence,name,id){
 }
 //Scenario for FILTER Button Event:
 function defineSelected(){
+    if(selectForm.value==='Not Selected'){
+        alert('Please, select TYPE!')
+    }
+    else{
+    //const selectedFilterValue = selectForm.options[selectForm.selectedIndex].value
     const selectedFilterValue = selectForm.value
     console.log(selectedFilterValue)
     //Clean table before publish filtered Data:
@@ -301,6 +306,7 @@ function defineSelected(){
     )
     console.log(filteredData)
     defineDataToPublish(filteredData)
+    }
 }
 
 //Scenario for RESET FILTER Button:
