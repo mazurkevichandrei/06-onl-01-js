@@ -234,9 +234,9 @@ types.sort(compareNumbers)
 const selectForm = document.querySelector('.select_form')
 //FILTER Button:
 const filterButton = document.querySelector('.filter_button')
-//CLEAR FILTER button:
+//RESET FILTER button:
 const reset_filter = document.querySelector('.reset_filter')
-//Table:
+//TABLE:
 const table = document.querySelector('.table_data')
 
 
