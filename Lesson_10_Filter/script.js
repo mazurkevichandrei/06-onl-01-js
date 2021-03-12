@@ -241,13 +241,20 @@ const table = document.querySelector('.table_data')
 
 
 //Fill SELECT Form options by items from types[]:
-types.forEach(function
-    (item){
+function fillSelect(){
     const optionItem = document.createElement('option')
     optionItem.classList.add('select_form_item')
-    optionItem.textContent=item;
-    selectForm.append(optionItem)}
-)
+    optionItem.textContent='Not Selected';
+    selectForm.append(optionItem)
+    types.forEach(function
+        (item){
+        const optionItem = document.createElement('option')
+        optionItem.classList.add('select_form_item')
+        optionItem.textContent=item;
+        selectForm.append(optionItem)}
+    )
+}
+fillSelect()
 //Fill table by data:
 function defineDataToPublish(datasource){
     const dataLen = datasource.length
@@ -301,7 +308,7 @@ function rstFilter(){
     const tableStringToDel = document.querySelectorAll('.table_data_string.cell')
     tableStringToDel.forEach((item)=>item.remove())
     defineDataToPublish(data)
-    selectForm.value=1
+    selectForm.value='Not Selected'
 }
 
 //Filter Button Event:
