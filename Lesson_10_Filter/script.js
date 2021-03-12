@@ -288,7 +288,7 @@ function publishData(price,type,area,presence,name,id){
 }
 //Scenario for FILTER Button Event:
 function defineSelected(){
-    const selectedFilterValue = selectForm.options[selectForm.selectedIndex].value
+    const selectedFilterValue = selectForm.value
     console.log(selectedFilterValue)
     //Clean table before publish filtered Data:
     const tableStringToDel = document.querySelectorAll('.table_data_string.cell')
