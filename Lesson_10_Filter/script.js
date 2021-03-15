@@ -298,9 +298,7 @@ function defineSelected(){
     const tableStringToDel = document.querySelectorAll('.table_data_string.cell')
     tableStringToDel.forEach((item)=>item.remove())
     const filteredData=data.filter((item)=>{
-        if(item.type==selectedFilterValue){
-            return item
-            }
+        return item.type==selectedFilterValue
         }
     )
     console.log(filteredData)
