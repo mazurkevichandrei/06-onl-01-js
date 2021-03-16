@@ -52,6 +52,9 @@ function delCust(e){
     const indexToDel = data.findIndex((item)=>item.id==elementId)
     data.splice(indexToDel,1)
     console.log(data)
+
+    //Remove from Storage
+    localStorage.removeItem(elementId)
 }
 
 //Add Delete Button to element
@@ -65,7 +68,17 @@ function addDelBtn(element){
     element.textContent=('')
     element.append(delBtn)
 }
-
+//Push to DATA
+function pushToData(custFName,custLName,custAge,idCounter){
+    data.push(
+        {
+            firstName: custFName,
+            lastName: custLName,
+            age: custAge,
+            id: idCounter
+        }
+    )
+}
 //Publish new Customer
 let idCounter=1001; //idCounter for Data
 function publishCustomer(custFName,custLName,custAge){
@@ -88,15 +101,60 @@ function publishCustomer(custFName,custLName,custAge){
     customers.append(customerTemplate)
 }
 
-//Initial Adding from data to table
-data.forEach(function(item, i, data){
-    const custFName = item.firstName;
-    const custLName = item.lastName;
-    const custAge   = item.age;
-    item.id=idCounter
-    publishCustomer(custFName,custLName,custAge)
-    
-})
+//Initial Adding from data to table --!!First action during Loading Page!!
+function initialLoad(){
+    //Check is Initial Load or Storage has already Data inserted manually:
+    if(localStorage.key(0)){
+        //Clean DATA for further rewrite
+        data=[]
+        //For Sort
+        function compareNumbers(a, b) {
+            return a - b;
+          }
+        //Get all Keys from Storage..
+        const storageKeys = Object.keys(localStorage)
+        //..and Sort it
+        storageKeys.sort(compareNumbers)
+        console.log(storageKeys)
+        //Get Data from Storage(Initial+Inserted Manually)and write to DATA and Table:
+        for(let key of storageKeys){
+            //Get value by KEY:
+            const storageElement=JSON.parse(localStorage.getItem(key))
+            const objId = {id: key}
+            let objFromStorage = Object.assign(storageElement,objId)
+            //Define argument's values for next transmition it to pushToData() and publishCustomer()
+            let {firstName,lastName,age,id} = objFromStorage
+            idCounter=id
+            //Rewrite DATA:
+            pushToData(firstName,lastName,age,idCounter)
+            //Publish to Table
+            publishCustomer(firstName,lastName,age)
+        }
+    }
+    else{
+        //Processing initial DATA:
+
+        data.forEach(function(item, i, data){
+        const custFName = item.firstName;
+        const custLName = item.lastName;
+        const custAge   = item.age;
+        //1.Add ID for each DATA Element
+        item.id=idCounter
+        
+        //2.Write DATA to Storage
+        const dataToStorage={
+        firstName: custFName,
+        lastName: custLName,
+        age: custAge,
+        }
+        const serialdataToStorage=JSON.stringify(dataToStorage)
+        localStorage.setItem(idCounter,serialdataToStorage)
+        //3.Publish to Table
+        publishCustomer(custFName,custLName,custAge)
+        })
+    }
+    console.log(data)
+}
 
 //Action Show_element
 function showElement (elm){
@@ -140,17 +198,21 @@ function addCustomer(){
         alert('AGE field should be contains Numbers!\nCorrect, please!')
     }
     else{
-    data.push(
-        {
+        //Add to DATA
+        pushToData(custFName,custLName,custAge,idCounter)
+        console.log(data)
+        //Write to Storage
+        const dataToStorage={
             firstName: custFName,
             lastName: custLName,
             age: custAge,
-            id: idCounter
         }
-    )
-    console.log(data)
-    publishCustomer(custFName,custLName,custAge)
-    cleanInput();
+        const serialdataToStorage=JSON.stringify(dataToStorage)
+        localStorage.setItem(idCounter,serialdataToStorage)
+        //Publish customer to Table
+        publishCustomer(custFName,custLName,custAge)
+        //Clean Input Area
+        cleanInput();
     }
     
 }
@@ -161,3 +223,6 @@ for(let item of btnClose){
     item.addEventListener('click', btnCloseAction)
 }
 okButton.addEventListener('click',addCustomer)
+
+//Run Initial Load Data:
+initialLoad()
