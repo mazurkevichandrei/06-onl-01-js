@@ -214,19 +214,17 @@ let data = [
 
 //Create list of Unic Type Values:
 let types = []
-data.forEach(function(item){
-    if(types.find(
-        (typesitem) => typesitem===item.type
-    )
-    ){}
-    else{
+data.forEach(function(item) {
+    if (types.find(
+            (typesitem) => typesitem === item.type
+        )) {} else {
         types.push(item.type)
     }
-}
-)
+})
+
 function compareNumbers(a, b) {
     return a - b;
-  }
+}
 types.sort(compareNumbers)
 
 
@@ -241,33 +239,32 @@ const table = document.querySelector('.table_data')
 
 
 //Fill SELECT Form options by items from types[]:
-function fillSelect(){
+function fillSelect() {
     const optionItem = document.createElement('option')
     optionItem.classList.add('select_form_item')
-    optionItem.textContent='Not Selected';
+    optionItem.textContent = 'Not Selected';
     selectForm.append(optionItem)
-    types.forEach(function
-        (item){
+    types.forEach(function(item) {
         const optionItem = document.createElement('option')
         optionItem.classList.add('select_form_item')
-        optionItem.textContent=item;
-        selectForm.append(optionItem)}
-    )
+        optionItem.textContent = item;
+        selectForm.append(optionItem)
+    })
 }
 fillSelect()
 //Fill table by data:
-function defineDataToPublish(datasource){
+function defineDataToPublish(datasource) {
     const dataLen = datasource.length
     datasource.forEach(
-        function (item){
+        function(item) {
             let {price,type,area,presence,name,id} = item
-            publishData(price,type,area,presence,name,id)
+            publishData(price, type, area, presence, name, id)
         }
     )
     //Add TOTAL Count Field:
     const tableStringTotal = document.querySelector('.table_data_string').cloneNode()
     tableStringTotal.classList.add('cell')
-    tableStringTotal.textContent=`Count: ${dataLen}`
+    tableStringTotal.textContent = `Count: ${dataLen}`
     table.append(tableStringTotal)
 }
 //Publish data in Table:
@@ -287,22 +284,20 @@ function publishData(price,type,area,presence,name,id){
     
 }
 //Scenario for FILTER Button Event:
-function defineSelected(){
-    if(selectForm.value==='Not Selected'){
+function defineSelected() {
+    if (selectForm.value === 'Not Selected') {
         alert('Please, select TYPE!')
-    }
-    else{
-    const selectedFilterValue = selectForm.value
-    console.log(selectedFilterValue)
-    //Clean table before publish filtered Data:
-    const tableStringToDel = document.querySelectorAll('.table_data_string.cell')
-    tableStringToDel.forEach((item)=>item.remove())
-    const filteredData=data.filter((item)=>{
-        return item.type==selectedFilterValue
-        }
-    )
-    console.log(filteredData)
-    defineDataToPublish(filteredData)
+    } else {
+        const selectedFilterValue = selectForm.value
+        console.log(selectedFilterValue)
+        //Clean table before publish filtered Data:
+        const tableStringToDel = document.querySelectorAll('.table_data_string.cell')
+        tableStringToDel.forEach((item) => item.remove())
+        const filteredData = data.filter((item) => {
+            return item.type == selectedFilterValue
+        })
+        console.log(filteredData)
+        defineDataToPublish(filteredData)
     }
 }
 
