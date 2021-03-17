@@ -3,9 +3,6 @@ const tabButtonActive = document.querySelector('.bookmark_tab.bookmark_tab_activ
 const contentItem = document.querySelectorAll('.content_item');
 const delTabBtn = document.querySelectorAll('.delete_tab_btn');
 
-// console.log(tabButtonActive)
-// console.log(tabButton)
-
 function tabButtonSwitcher(evt){
     const clickedButton = evt.target
     const tabButtonActive = document.querySelector('.bookmark_tab.bookmark_tab_active');
@@ -25,10 +22,9 @@ function tabButtonSwitcher(evt){
 function delTab(evt){
     const clickedDelButton = evt.target
     const elementToDel = clickedDelButton.parentElement
-    const elementToDelClass = elementToDel.classList.value
     const contentItemActive = document.querySelector('.content_item.content_item_active');
 
-    if(elementToDelClass === 'bookmark_tab bookmark_tab_active'){
+    if(elementToDel.classList.contains('bookmark_tab_active')){
         elementToDel.classList.remove('bookmark_tab_active')
         elementToDel.remove()
         const tabButton = document.querySelectorAll('.bookmark_tab');
