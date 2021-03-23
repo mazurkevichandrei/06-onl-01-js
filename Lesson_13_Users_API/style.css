@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins';
+}
+
+.users_per_page{
+    width: 80px;
+}
+.users_navigation{
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #7f8082;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.load_users{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.users_count_select{
+    font-size: 15px;
+}
+.users_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #7f8082;
+    margin: 0 auto;
+}
+.user_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 230px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a2a2a3;
+    margin: 15px;
+    cursor: pointer;
+    transition: all linear .3s;
+    position: relative;
+    z-index: 5;
+}
+.user_item_link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+}
+.user_item:hover{
+    transform: scale(1.05)
+}
+.user_name{
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.page_navigation{
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #7f8082;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    display: none;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(160, 160, 163, 0.5);
+    z-index: 10;
+}
+.show_modal{
+    display: flex;
+}
+.modal_window{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    max-width: 600px;
+    width: 100%;
+    border: 2px solid #83858f;
+    padding: 20px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.modal_data {
+    display: flex;
+}
+.modal_image {
+    /* border: 2px solid #83858f; */
+    padding: 10px;
+    margin: 15px;
+}
+.modal_info {
+    /* border: 2px solid #83858f; */
+    padding: 10px;
+    margin: 15px;
+}
+.modal_close {
+    margin-top: 25px;
+}
+.close_modal_window {
+    cursor: pointer;
+}
