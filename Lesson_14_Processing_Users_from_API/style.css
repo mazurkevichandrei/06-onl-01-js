@@ -6,6 +6,7 @@ label {
 }
 table{
   border-spacing: 0;
+  border: 1px solid gray;
 }
 td{
   border: 1px solid gray;
