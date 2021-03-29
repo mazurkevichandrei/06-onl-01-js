@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 0 auto;
+}
+.table_data {
+    width: 600px;
+    border: 1px solid #6e7c85;
+    border-spacing: 0;
+}
+.table_data_string {
+
+}
+.table_data_string_item {
+    padding: 10px;
+    border: 1px solid #6e7c85;
+}
+.table_data_string:first-child,
+.table_data_string:last-child{
+    color: #ffffff;
+    background-color: #98acb8;
+}
+
+/* Select TEXT */
+.select_text{
+    margin-left: 10px;
+    padding-top: 10px;
+}
+/* Select FORM */
+.select_form{
+    outline: 0;
+    margin-left: 10px;
+    max-width: 130px;
+    width: 100%;
+    padding: 9.5px;
+    border: 2px solid #6e7c85;
+    
+}
+.select_form_item{
+    color: #6e7c85;
+    font-weight: bold;
+}
+/* Button FILTER */
+.filter_button,
+.reset_filter{
+    outline: 0;
+    cursor: pointer;
+    max-width: 100px;
+    width: 100%;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #98acb8;
+    border: 2px solid #6e7c85;
+    border-left: 0;
+    transition: all linear .3s;
+}
+.reset_filter{
+    max-width: 150px;
+    
+}
+.filter_button:hover,
+.reset_filter:hover{
+    background-color: #6e7c85;
+}
