@@ -1,0 +1,14 @@
+label {
+  display: block;
+  margin: 5px;
+  text-align: right;
+  width: 300px
+}
+table{
+  border-spacing: 0;
+  border: 1px solid gray;
+}
+td{
+  border: 1px solid gray;
+  padding: 10px;
+}
